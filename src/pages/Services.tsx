@@ -8,6 +8,7 @@ const ServiceCard = styled(Card)`
   flex-direction: column;
   transition: transform 0.3s ease;
   background-color: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   
   &:hover {
     transform: translateY(-5px);

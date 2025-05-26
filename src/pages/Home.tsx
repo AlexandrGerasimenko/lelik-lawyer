@@ -46,6 +46,17 @@ const StyledLink = styled(Link)`
   color: inherit;
 `;
 
+const FeatureBox = styled(Box)`
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+`;
+
 const Home: React.FC = () => {
   return (
     <Box>
@@ -84,30 +95,30 @@ const Home: React.FC = () => {
           </Typography>
         </Box>
         <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 4 }}>
-          <Box sx={{ textAlign: 'center', p: 3 }}>
+          <FeatureBox>
             <Typography variant="h6" gutterBottom>
               Професіоналізм
             </Typography>
             <Typography>
               Більше 10 років досвіду у сфері юриспруденції
             </Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center', p: 3 }}>
+          </FeatureBox>
+          <FeatureBox>
             <Typography variant="h6" gutterBottom>
               Індивідуальний підхід
             </Typography>
             <Typography>
               Кожна справа розглядається з урахуванням усіх особливостей
             </Typography>
-          </Box>
-          <Box sx={{ textAlign: 'center', p: 3 }}>
+          </FeatureBox>
+          <FeatureBox>
             <Typography variant="h6" gutterBottom>
               Конфіденційність
             </Typography>
             <Typography>
               Гарантуємо повну конфіденційність інформації
             </Typography>
-          </Box>
+          </FeatureBox>
         </Box>
       </Container>
     </Box>
