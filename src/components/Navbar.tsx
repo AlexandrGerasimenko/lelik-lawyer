@@ -1,7 +1,8 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Box } from '@mui/material';
+import React, { useState } from 'react';
+import { AppBar, Toolbar, Typography, Button, Box, IconButton, Menu, MenuItem, useMediaQuery, useTheme } from '@mui/material';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const StyledAppBar = styled(AppBar)`
   background-color: #000000;
@@ -22,6 +23,26 @@ const StyledLink = styled(Link)`
 `;
 
 const Navbar: React.FC = () => {
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+
+  const handleMenu = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const menuItems = [
+    { path: '/', label: 'Головна' },
+    { path: '/services', label: 'Послуги' },
+    { path: '/experience', label: 'Досвід' },
+    { path: '/reviews', label: 'Відгуки' },
+    { path: '/contact', label: 'Контакти' }
+  ];
+
   return (
     <StyledAppBar position="static">
       <Toolbar>
@@ -30,33 +51,56 @@ const Navbar: React.FC = () => {
             ЛЕЛІК
           </StyledLink>
         </Typography>
-        <Box>
-          <StyledLink to="/">
-            <NavButton>
-              Головна
-            </NavButton>
-          </StyledLink>
-          <StyledLink to="/services">
-            <NavButton>
-              Послуги
-            </NavButton>
-          </StyledLink>
-          <StyledLink to="/experience">
-            <NavButton>
-              Досвід
-            </NavButton>
-          </StyledLink>
-          <StyledLink to="/reviews">
-            <NavButton>
-              Відгуки
-            </NavButton>
-          </StyledLink>
-          <StyledLink to="/contact">
-            <NavButton>
-              Контакти
-            </NavButton>
-          </StyledLink>
-        </Box>
+        
+        {isMobile ? (
+          <>
+            <IconButton
+              size="large"
+              edge="end"
+              color="inherit"
+              aria-label="menu"
+              onClick={handleMenu}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorEl)}
+              onClose={handleClose}
+            >
+              {menuItems.map((item) => (
+                <MenuItem 
+                  key={item.path} 
+                  onClick={handleClose}
+                  component={Link}
+                  to={item.path}
+                >
+                  {item.label}
+                </MenuItem>
+              ))}
+            </Menu>
+          </>
+        ) : (
+          <Box>
+            {menuItems.map((item) => (
+              <StyledLink key={item.path} to={item.path}>
+                <NavButton>
+                  {item.label}
+                </NavButton>
+              </StyledLink>
+            ))}
+          </Box>
+        )}
       </Toolbar>
     </StyledAppBar>
   );
