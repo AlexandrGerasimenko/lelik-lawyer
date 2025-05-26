@@ -28,7 +28,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Router>
+      <Router basename="/lelik-lawyer">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

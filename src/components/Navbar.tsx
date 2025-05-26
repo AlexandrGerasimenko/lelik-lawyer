@@ -26,32 +26,32 @@ const Navbar: React.FC = () => {
     <StyledAppBar position="static">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: '#ffffff' }}>
-          <StyledLink to="/">
+          <StyledLink to="/lelik-lawyer/">
             ЛЕЛІК
           </StyledLink>
         </Typography>
         <Box>
-          <StyledLink to="/">
+          <StyledLink to="/lelik-lawyer/">
             <NavButton>
               Головна
             </NavButton>
           </StyledLink>
-          <StyledLink to="/services">
+          <StyledLink to="/lelik-lawyer/services">
             <NavButton>
               Послуги
             </NavButton>
           </StyledLink>
-          <StyledLink to="/experience">
+          <StyledLink to="/lelik-lawyer/experience">
             <NavButton>
               Досвід
             </NavButton>
           </StyledLink>
-          <StyledLink to="/reviews">
+          <StyledLink to="/lelik-lawyer/reviews">
             <NavButton>
               Відгуки
             </NavButton>
           </StyledLink>
-          <StyledLink to="/contact">
+          <StyledLink to="/lelik-lawyer/contact">
             <NavButton>
               Контакти
             </NavButton>
