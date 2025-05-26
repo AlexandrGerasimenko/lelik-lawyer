@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/lelik-lawyer/static/css/main.e6c13ad2.css",
-    "main.js": "/lelik-lawyer/static/js/main.494b0f2b.js",
+    "main.js": "/lelik-lawyer/static/js/main.69c4949c.js",
     "static/js/453.b3907e58.chunk.js": "/lelik-lawyer/static/js/453.b3907e58.chunk.js",
     "index.html": "/lelik-lawyer/index.html",
     "main.e6c13ad2.css.map": "/lelik-lawyer/static/css/main.e6c13ad2.css.map",
-    "main.494b0f2b.js.map": "/lelik-lawyer/static/js/main.494b0f2b.js.map",
+    "main.69c4949c.js.map": "/lelik-lawyer/static/js/main.69c4949c.js.map",
     "453.b3907e58.chunk.js.map": "/lelik-lawyer/static/js/453.b3907e58.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.494b0f2b.js"
+    "static/js/main.69c4949c.js"
   ]
 }
